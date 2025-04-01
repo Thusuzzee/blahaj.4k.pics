@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Random Blåhaj image :3">
+    <link rel="icon" href="/favicons/favicon.ico">
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <title>Random Blåhaj ー 4k.pics</title>
+
+    <meta property="og:title" content="Random Blåhaj ー 4k.pics">
+    <meta property="og:description" content="Blåhaj is a plush toy of a blue shark made and sold by the Swedish company IKEA.">
+    <meta property="og:url" content="https://blahaj.4k.pics/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="transgirl.wamellow.com">
+    <meta name="theme-color" content="#5692a3">
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Random Blåhaj ー 4k.pics">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer data-domain="blahaj.4k.pics" src="https://analytics.wamellow.com/js/script.file-downloads.outbound-links.js"></script>
+</head>
+
+<body>
+    <div id="image-container">
+        <img id="displayed-image" alt="Random Blåhaj" style="opacity: 0;">
+        <div id="loading">
+            <div class="emoji-loader">🦈</div>
+            <div class="loading-text">Loading Blåhaj...</div>
+            <div class="credit-text">Powered by <span class="domain-highlight">transgirl.wamellow.com</span></div>
+        </div>
+
+        <div id="button-container">
+            <button id="theme-toggle" class="btn btn-social" title="Toggle dark/light mode">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon theme-icon-dark" width="24" height="24" viewBox="0 -960 960 960" fill="#FFFFFF">
+                    <path d="M480-120q-150 0-255-105T120-480q0-135 79.5-229T408-830q20-5 34-1t22 15q8 10 7.5 25t-8.5 35q-9 23-14 47t-5 49q0 90 63 153t153 63q25 0 48.5-4.5T754-461q22-8 38-7t26 9q10 8 13 23t-2 36q-27 121-121 200.5T480-120Zm0-60q109 0 190-67.5T771-406q-25 11-53.5 16.5T660-384q-115 0-195.5-80.5T384-660q0-24 5-51.5t18-62.5q-98 27-162.5 109.5T180-480q0 125 87.5 212.5T480-180Zm-4-297Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon theme-icon-light" width="24" height="24" viewBox="0 -960 960 960" fill="#FFFFFF">
+                    <path d="M479.765-340Q538-340 579-380.765q41-40.764 41-99Q620-538 579.235-579q-40.764-41-99-41Q422-620 381-579.235q-41 40.764-41 99Q340-422 380.765-381q40.764 41 99 41Zm.235 60q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM70-450q-12.75 0-21.375-8.675Q40-467.351 40-480.175 40-493 48.625-501.5T70-510h100q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T170-450H70Zm720 0q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T790-510h100q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T890-450H790ZM479.825-760Q467-760 458.5-768.625T450-790v-100q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T510-890v100q0 12.75-8.675 21.375-8.676 8.625-21.5 8.625Zm0 720Q467-40 458.5-48.625T450-70v-100q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T510-170v100q0 12.75-8.675 21.375Q492.649-40 479.825-40ZM240-678l-57-56q-9-9-8.629-21.603.37-12.604 8.526-21.5 8.896-8.897 21.5-8.897Q217-786 226-777l56 57q8 9 8 21t-8 20.5q-8 8.5-20.5 8.5t-21.5-8Zm494 495-56-57q-8-9-8-21.375T678.5-282q8.5-9 20.5-9t21 9l57 56q9 9 8.629 21.603-.37 12.604-8.526 21.5-8.896 8.897-21.5 8.897Q743-174 734-183Zm-56-495q-9-9-9-21t9-21l56-57q9-9 21.603-8.629 12.604.37 21.5 8.526 8.897 8.896 8.897 21.5Q786-743 777-734l-57 56q-8 8-20.364 8-12.363 0-21.636-8ZM182.897-182.897q-8.897-8.896-8.897-21.5Q174-217 183-226l57-56q8.8-9 20.9-9 12.1 0 20.709 9 9.391 9 9.391 21t-9 21l-56 57q-9 9-21.603 8.629-12.604-.37-21.5-8.526ZM480-480Z"/>
+                </svg>
+            </button>
+
+            <a href="https://github.com/Luna-devv/transgirl" target="_blank" class="btn btn-social btn-github" title="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 98 96" fill="#FFFFFF">
+                    <path d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/>
+                </svg>
+            </a>
+
+            <button id="refresh-btn" class="btn btn-refresh" title="Refresh">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 -960 960 960" fill="#FFFFFF">
+                    <path d="M480-160q-133 0-226.5-93.5T160-480q0-133 93.5-226.5T480-800h44l-64-64 56-56 160 160-160 160-56-56 64-64h-44q-100 0-170 70t-70 170q0 100 70 170t170 70q100 0 170-70t70-170h80q0 133-93.5 226.5T480-160Z"/>
+                </svg>
+                <span>New Blåhaj</span>
+            </button>
+
+            <a href="https://bsky.app/profile/blahaj.4k.pics" target="_blank" class="btn btn-social btn-bluesky" title="View on Bluesky">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 -3.268 64 68.414" fill="#FFFFFF">
+                    <path d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805zm36.254 0C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745z"/>
+                </svg>
+            </a>
+
+            <button id="info-btn" class="btn btn-social" title="Information">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 -960 960 960" fill="#FFFFFF">
+                    <path d="M480-280q17 0 28.5-11.5T520-320v-160q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480v160q0 17 11.5 28.5T480-280Zm0-360q17 0 28.5-11.5T520-680q0-17-11.5-28.5T480-720q-17 0-28.5 11.5T440-680q0 17 11.5 28.5T480-640Zm0 560q-83 0-156-31.5T197-197t-85.5-127T80-480q0-83 31.5-156T197-763t127-85.5T480-880q83 0 156 31.5T763-763t85.5 127T880-480q0 83-31.5 156T763-197t-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+                </svg>
+            </button>
+        </div>
+
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>blahaj.4k.pics</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>Legal Information</h3>
+                <h4>1. Disclaimer of Liability</h4>
+                <p>This website is provided "as is" without any warranties, express or implied. The creators of this site are not responsible for any inaccuracies, errors, or issues arising from the use of this website.</p>
+                <h4>2. Copyright and Fair Use Notice</h4>
+                <p>All images are sourced from <span class="domain-highlight">transgirl.wamellow.com</span> and used on <span class="domain-highlight">blahaj.4k.pics</span> for educational, informational, or entertainment purposes under applicable fair use laws. If you are a copyright holder and wish to have content removed, please contact us at <span class="domain-highlight">transgirl[at]z1.gg</span>.</p>
+                <h4>3. Trademark Disclaimer</h4>
+                <p>Blåhaj and other IKEA trademarks are the property of Inter IKEA Systems B.V. This site is not affiliated with, endorsed by, or connected to IKEA in any way.</p>
+                <h3>Privacy Information</h3>
+                <p>This site uses minimal analytics to understand usage patterns. No personal information is collected, stored, or shared.</p>
+                <h3>Credits</h3>
+                <p>Website created with love for the Blåhaj community.</p>
+                <p>Source code available on <a href="https://github.com/Thusuzzee/blahaj.4k.pics" target="_blank">GitHub</a>.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="./js/script.js" type="module"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

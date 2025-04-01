@@ -1,0 +1,36 @@
+{
+  "name": "blahaj.4k.pics",
+  "version": "1.0.0",
+  "description": "A simple website displaying random images of IKEA's Blåhaj shark plush toy. Powered by transgirl.wamellow.com.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "vite": "^5.4.16"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thusuzzee/blahaj.4k.pics"
+  },
+  "author": "Thusuzzee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Thusuzzee/blahaj.4k.pics/issues"
+  },
+  "homepage": "https://blahaj.4k.pics"
+}

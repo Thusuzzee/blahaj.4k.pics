@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Random Blåhaj - Offline">
+    <link rel="icon" href="/favicons/favicon.ico">
+    <title>Random Blåhaj - Offline</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Space Grotesk', Arial, sans-serif;
+        }
+        .offline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .offline-emoji {
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+        .offline-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--highlight-color);
+        }
+        .offline-message {
+            font-size: 16px;
+            margin-bottom: 30px;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+        .retry-button {
+            background-color: var(--btn-bg-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-family: 'Space Grotesk', Arial, sans-serif;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        .retry-button:hover {
+            background-color: var(--btn-hover-color);
+            transform: translateY(-2px);
+        }
+        .retry-button:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-emoji">🦈📵</div>
+        <h1 class="offline-title">You're Offline</h1>
+        <p class="offline-message">It looks like you're currently offline. Blåhaj needs an internet connection to swim to you. Please check your connection and try again.</p>
+        <button class="retry-button" onclick="window.location.reload()">Try Again</button>
+    </div>
+</body>
+</html>
