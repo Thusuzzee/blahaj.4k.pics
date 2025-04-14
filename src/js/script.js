@@ -1,10 +1,9 @@
-// Cache DOM elements
-const imageElement = document.getElementById('displayed-image');
-const loadingElement = document.getElementById('loading');
-const refreshButton = document.getElementById('refresh-btn');
-const themeToggle = document.getElementById('theme-toggle');
-const infoButton = document.getElementById('info-btn');
-const infoModal = document.getElementById('info-modal');
+const imageElement = document.querySelector('#displayed-image');
+const loadingElement = document.querySelector('#loading');
+const refreshButton = document.querySelector('#refresh-btn');
+const themeToggle = document.querySelector('#theme-toggle');
+const infoButton = document.querySelector('#info-btn');
+const infoModal = document.querySelector('#info-modal');
 const closeModalButton = document.querySelector('.close-btn');
 
 // API and fallback configuration
@@ -98,7 +97,7 @@ function hideInfoModal() {
     infoModal.classList.remove('show');
 }
 
-// Fetch data from API with abort controller
+// Fetch data from API with abort controller and timeout
 async function fetchData() {
     if (currentFetchController) {
         currentFetchController.abort();
@@ -106,6 +105,13 @@ async function fetchData() {
 
     // Create a new controller for this request
     currentFetchController = new AbortController();
+
+    // Add a timeout to prevent hanging requests
+    const timeoutId = setTimeout(() => {
+        if (currentFetchController) {
+            currentFetchController.abort();
+        }
+    }, 5000);
 
     try {
         const response = await fetch(apiUrl, {
@@ -129,26 +135,17 @@ async function fetchData() {
         console.error('Fetch error:', error);
         throw error;
     } finally {
+        clearTimeout(timeoutId);
         currentFetchController = null;
     }
 }
 
-// Clean URL by removing query parameters
-function cleanUrl(url) {
-    try {
-        const urlObj = new URL(url);
-        return urlObj.origin + urlObj.pathname;
-    } catch {
-        return url.split('?')[0];
-    }
-}
-
 // Set button loading state
-function setButtonLoading(isLoading) {
+function setButtonLoading(loading) {
     if (!refreshButton) return;
 
-    refreshButton.disabled = isLoading;
-    refreshButton.classList.toggle('btn-loading', isLoading);
+    refreshButton.disabled = loading;
+    refreshButton.classList.toggle('btn-loading', loading);
 }
 
 // Get random fallback image
@@ -168,26 +165,22 @@ async function loadBlahajImage() {
     setButtonLoading(true);
 
     try {
-        let imageUrl;
-
-        try {
-            const data = await fetchData();
-            if (data && data.url) {
-                imageUrl = cleanUrl(data.url);
-            } else {
-                imageUrl = getRandomFallbackImage();
-            }
-        } catch {
-            imageUrl = getRandomFallbackImage();
-        }
-
         imageElement.onload = handleImageLoad;
         imageElement.onerror = handleImageError;
 
-        imageElement.src = imageUrl;
-    } catch {
+        // Try to get an image from the API
+        try {
+            const data = await fetchData();
+            if (data && data.url) {
+                imageElement.src = data.url;
+                return;
+            }
+        } catch (error) {
+            console.error('Error loading image:', error);
+        }
+
+        // If we get here, use a fallback image
         imageElement.src = getRandomFallbackImage();
-        handleImageLoad();
     } finally {
         setTimeout(() => {
             isLoading = false;
@@ -204,14 +197,17 @@ function handleImageLoad() {
 
 // Handle image loading error
 function handleImageError() {
+    console.warn('Image failed to load, using fallback');
     imageElement.src = getRandomFallbackImage();
 }
 
 // Show or hide loading screen
 function showLoading(show) {
+    if (!loadingElement) return;
+
     if (show) {
         loadingElement.style.display = 'flex';
-        imageElement.style.opacity = '0';
+        if (imageElement) imageElement.style.opacity = '0';
     } else {
         loadingElement.style.opacity = '0';
 
@@ -227,6 +223,5 @@ function showLoading(show) {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initApp);
 } else {
-    // DOM already loaded
-    setTimeout(initApp, 1);
+    initApp();
 }
